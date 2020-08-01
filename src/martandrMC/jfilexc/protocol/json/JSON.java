@@ -1,9 +1,5 @@
 package martandrMC.jfilexc.protocol.json;
 
-import java.io.File;
-import java.io.IOException;
-import java.util.Scanner;
-
 import martandrMC.jfilexc.protocol.json.elements.IJSONElement;
 import martandrMC.jfilexc.protocol.json.elements.JSONArray;
 import martandrMC.jfilexc.protocol.json.elements.JSONChildException;
@@ -11,17 +7,6 @@ import martandrMC.jfilexc.protocol.json.elements.JSONObject;
 import martandrMC.jfilexc.protocol.json.elements.JSONPrimitive;
 
 public class JSON {
-	
-	public static void main(String[] args) throws IOException, JSONFormatException, JSONChildException {
-		String samplejson = "";
-		String jsondir = "src\\martandrMC\\json\\";
-		File file = new File(jsondir+"Notes.txt");
-		Scanner in = new Scanner(file);
-		while(in.hasNext()) samplejson += (in.nextLine()+"\n");
-		in.close();
-		
-		System.out.println(getJSONString(parseObj(samplejson), false));
-	}
 	
 	public static JSONObject parseObj(String json) throws JSONFormatException, JSONChildException {return JSONParser.parseObject(json, false);}
 	public static JSONArray parseArr(String json) throws JSONFormatException, JSONChildException {return JSONParser.parseArray(json, false);}

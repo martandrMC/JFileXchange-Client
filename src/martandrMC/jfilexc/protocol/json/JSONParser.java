@@ -21,13 +21,6 @@ public class JSONParser {
 	
 	private static enum State {NEW,OBJ,ARR,DONE}; //State enum for the parser state machine
 	
-	/**
-	 * Parses a JSON primitive from the input string.
-	 * @param json JSON code containing the primitive.
-	 * @param withname Whether to expect the primitve preffixed by a name or not.
-	 * @return Returns a JSONPrimitive object containing the extracted name and value from the JSON string.
-	 * @throws JSONFormatException Thrown when an invalid primitive format or integer overflow is found.
-	 */
 	public static JSONPrimitive parsePrimitive(String json, boolean withname) throws JSONFormatException {
 		//Error Check
 		json = json.replaceAll("\\s", ""); //Remove whitespace
@@ -55,14 +48,6 @@ public class JSONParser {
 		}
 	}
 	
-	/**
-	 * Parses a JSON object from the input string recursively.
-	 * @param json JSON code containing the object.
-	 * @param withname Whether to expect the object preffixed by a name or not.
-	 * @return Returns a JSONObject object containing the extracted name and children from the JSON string.
-	 * @throws JSONFormatException Thrown when an invalid object format is found.
-	 * @throws JSONChildException Thrown when duplicate children names are found.
-	 */
 	public static JSONObject parseObject(String json, boolean withname) throws JSONFormatException, JSONChildException {
 		//Error Check
 		json = json.replaceAll("\\s", ""); //Remove whitespace
@@ -121,14 +106,6 @@ public class JSONParser {
 		return output;
 	}
 	
-	/**
-	 * Parses a JSON array from the input string recursively.
-	 * @param json JSON code containing the array.
-	 * @param withname Whether to expect the array preffixed by a name or not.
-	 * @return Returns a JSONArray object containing the extracted name and children from the JSON string.
-	 * @throws JSONFormatException Thrown when an invalid array format is found.
-	 * @throws JSONChildException Thrown when duplicate (grand)children names are found.
-	 */
 	public static JSONArray parseArray(String json, boolean withname) throws JSONFormatException, JSONChildException {
 		//Error Check
 		json = json.replaceAll("\\s", ""); //Remove whitespace
