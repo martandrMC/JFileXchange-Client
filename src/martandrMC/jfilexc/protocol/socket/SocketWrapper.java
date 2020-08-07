@@ -1,5 +1,5 @@
 package martandrMC.jfilexc.protocol.socket;
 
-public class SocketHandler {
+public class SocketWrapper {
 
 }
