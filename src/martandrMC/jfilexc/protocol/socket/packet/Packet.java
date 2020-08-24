@@ -3,7 +3,7 @@ package martandrMC.jfilexc.protocol.socket.packet;
 public class Packet {
 	
 	private static final short POLY = 0x1021;
-	public static final int INI = 1<<7, FIN = 1<<6, _5 = 1<<5, _4 = 1<<4, _3 = 1<<3, PLD = 1<<2, CHK = 1<<1, ACK = 1<<0;
+	public static final int INI = 1<<7, FIN = 1<<6, PLD = 1<<5, CHK = 1<<4, AID = 1<<3, PID = 1<<2, RSD = 1<<1, ACK = 1<<0;
 	
 	private int flags;
 	
